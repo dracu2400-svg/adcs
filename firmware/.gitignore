@@ -21,6 +21,10 @@ Drivers/STM32L4xx_HAL_Driver/
 Drivers/CMSIS/
 Middlewares/Third_Party/FreeRTOS/
 
+# Temporary directories from setup script
+temp_stm32cubel4/
+temp_freertos/
+
 # Keep the directory structure
 !Drivers/.gitkeep
 !Middlewares/.gitkeep

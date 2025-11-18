@@ -64,6 +64,7 @@ firmware/
 │   ├── Inc/
 │   └── Src/
 ├── doc/                        # Documentation
+│   ├── ARCHITECTURE.md         # Firmware architecture and datapath
 │   ├── PIN_MAPPING.md          # Comprehensive pin mapping reference
 │   └── PIN_DIAGRAM.txt         # Visual LQFP64 pinout diagram
 ├── Makefile                    # Build configuration
@@ -178,6 +179,15 @@ JLinkExe -device STM32L476RG -if SWD -speed 4000 -autoconnect 1
 ```
 
 ## Firmware Architecture
+
+📖 **For complete architecture documentation**, see **[doc/ARCHITECTURE.md](doc/ARCHITECTURE.md)** which includes:
+- Detailed data flow diagrams (sensor → algorithm → actuator)
+- Task timing and scheduling analysis
+- Module design and interfaces
+- Control algorithms (B-dot, PID)
+- Communication protocol stack
+- Memory architecture and budgets
+- Performance metrics
 
 ### FreeRTOS Tasks
 

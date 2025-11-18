@@ -1,0 +1,334 @@
+================================================================================
+STM32L476RG (LQFP64) PIN DIAGRAM - ADCS FIRMWARE
+================================================================================
+Package: LQFP64 (10mm x 10mm)
+Target: ADCS (Attitude Determination and Control System)
+Document Version: 1.0
+Date: 2025-11-18
+
+IMPORTANT: Verify against actual hardware PCB before use!
+See PIN_MAPPING.md for complete documentation.
+
+================================================================================
+PIN ASSIGNMENTS BY FUNCTION GROUP
+================================================================================
+
+LEGEND:
+  [PWR]   - Power/Ground
+  [SYS]   - System (Reset, Boot, Debug)
+  [CAN]   - CAN Bus
+  [I2C]   - I2C Bus
+  [SPI]   - SPI Bus
+  [PWM]   - PWM Outputs
+  [GPIO]  - GPIO Outputs
+  [ADC]   - Analog Inputs
+  [INT]   - Interrupt Inputs
+  [UART]  - Debug UART
+  [CLK]   - Clock Source
+  [ - ]   - Reserved/Unused
+
+================================================================================
+LQFP64 PACKAGE PINOUT (TOP VIEW)
+================================================================================
+
+                             ┌───────┐
+                             │   ┌───┤ 64  NC
+                    [PWR] VDD├───┤   ├ 63  VDD      [PWR]
+                    [PWR] VSS├───┤   ├ 62  VSS      [PWR]
+                             PB9├───┤   ├ 61  PB8
+                             PB8├───┤   ├ 60  BOOT0  [SYS]
+               [I2C] I2C1_SDA PB7├───┤   ├ 59  PB7   I2C1_SDA [I2C]
+               [I2C] I2C1_SCL PB6├───┤   ├ 58  PB6   I2C1_SCL [I2C]
+                             PB5├───┤   ├ 57  PB5
+                             PB4├───┤   ├ 56  PB4
+                    [SYS] SWO PB3├───┤   ├ 55  PB3   SWO      [SYS]
+                             PD2├───┤   ├ 54  PD2
+                            PC12├───┤   ├ 53  PC12
+                            PC11├───┤   ├ 52  PC11
+                            PC10├───┤   ├ 51  PC10
+                            PA15├───┤ S ├ 50  PA15
+               [SYS] SWCLK PA14├───┤ T ├ 49  PA14   SWCLK    [SYS]
+                    [PWR] VDD├───┤ M ├ 48  VDD      [PWR]
+                    [PWR] VSS├───┤ 3 ├ 47  VSS      [PWR]
+               [SYS] SWDIO PA13├───┤ 2 ├ 46  PA13   SWDIO    [SYS]
+                [CAN] TX PA12├───┤ L ├ 45  PA12   TX        [CAN]
+                [CAN] RX PA11├───┤ 4 ├ 44  PA11   RX        [CAN]
+              [UART] RX PA10├───┤ 7 ├ 43  PA10   RX        [UART]
+              [UART] TX  PA9├───┤ 6 ├ 42  PA9    TX        [UART]
+                             PA8├───┤ R ├ 41  PA8
+                             PC9├───┤ G ├ 40  PC9
+              [INT] GYRO_INT PC8├───┤   ├ 39  PC8   GYRO_INT [INT]
+              [INT] MAG_INT  PC7├───┤   ├ 38  PC7   MAG_INT  [INT]
+              [SPI] CS_GYRO  PC6├───┤   ├ 37  PC6   CS_GYRO  [SPI]
+              [SPI] MOSI    PB15├───┤   ├ 36  PB15  MOSI     [SPI]
+              [SPI] MISO    PB14├───┤   ├ 35  PB14  MISO     [SPI]
+              [SPI] SCK     PB13├───┤   ├ 34  PB13  SCK      [SPI]
+              [SPI] CS_MAG  PB12├───┤   ├ 33  PB12  CS_MAG   [SPI]
+                    [PWR] VDD├───┤   ├ 32  VDD      [PWR]
+                    [PWR] VSS├───┤   ├ 31  VSS      [PWR]
+              [GPIO] LED    PB11├───┤   ├ 30  PB11  LED      [GPIO]
+              [PWM] COIL2   PB10├───┤   ├ 29  PB10  COIL2    [PWM]
+                             PB2├───┤   ├ 28  PB2   BOOT1
+              [PWM] COIL1    PB1├───┤   ├ 27  PB1   COIL1    [PWM]
+              [PWM] COIL0    PB0├───┤   ├ 26  PB0   COIL0    [PWM]
+              [GPIO] WDI_EXT PC5├───┤   ├ 25  PC5   WDI_EXT  [GPIO]
+              [GPIO] COIL2_EN PC4├───┤   ├ 24  PC4   COIL2_EN [GPIO]
+              [ADC] SUN0     PC3├───┤   ├ 23  PC3   SUN0     [ADC]
+              [GPIO] GPIO2   PC2├───┤   ├ 22  PC2   GPIO2    [GPIO]
+              [GPIO] GPIO1   PC1├───┤   ├ 21  PC1   GPIO1    [GPIO]
+              [GPIO] GPIO0   PC0├───┤   ├ 20  PC0   GPIO0    [GPIO]
+                    [PWR] VDDA├───┤   ├ 19  VDDA     [PWR]
+                    [PWR] VSSA├───┤   ├ 18  VSSA     [PWR]
+              [GPIO] COIL1_EN PA7├───┤   ├ 17  PA7   COIL1_EN [GPIO]
+              [GPIO] COIL0_EN PA6├───┤   ├ 16  PA6   COIL0_EN [GPIO]
+              [GPIO] COIL2_DIR PA5├───┤   ├ 15  PA5   COIL2_DIR[GPIO]
+              [GPIO] COIL1_DIR PA4├───┤   ├ 14  PA4   COIL1_DIR[GPIO]
+              [GPIO] COIL0_DIR PA3├───┤   ├ 13  PA3   COIL0_DIR[GPIO]
+              [ADC] SUN3     PA2├───┤   ├ 12  PA2   SUN3     [ADC]
+              [ADC] SUN2     PA1├───┤   ├ 11  PA1   SUN2     [ADC]
+              [ADC] SUN1     PA0├───┤   ├ 10  PA0   SUN1     [ADC]
+                    [SYS] NRST├───┤   ├  9  NRST     [SYS]
+               [CLK] OSC_OUT PH1├───┤   ├  8  PH1   OSC_OUT  [CLK]
+               [CLK] OSC_IN  PH0├───┤   ├  7  PH0   OSC_IN   [CLK]
+                            PC15├───┤   ├  6  PC15
+              [CLK] LSE_OUT PC14├───┤   ├  5  PC14  LSE_OUT  [CLK]
+              [CLK] LSE_IN  PC13├───┤   ├  4  PC13  LSE_IN   [CLK]
+                                 └───┴───┴  3  PC13
+                                         └─── 2  PC14
+                                         └─── 1  PC13
+                             └───────┘
+
+================================================================================
+PIN ASSIGNMENTS BY PORT
+================================================================================
+
+PORT A (GPIOA):
+  PA0  - ADC       - SUN_SENS_1 (Sun sensor 1 analog input)
+  PA1  - ADC       - SUN_SENS_2 (Sun sensor 2 analog input)
+  PA2  - ADC       - SUN_SENS_3 (Sun sensor 3 analog input)
+  PA3  - GPIO OUT  - COIL_0_DIR (Magnetorquer 0 direction)
+  PA4  - GPIO OUT  - COIL_1_DIR (Magnetorquer 1 direction)
+  PA5  - GPIO OUT  - COIL_2_DIR (Magnetorquer 2 direction)
+  PA6  - GPIO OUT  - COIL_0_EN (Magnetorquer 0 enable)
+  PA7  - GPIO OUT  - COIL_1_EN (Magnetorquer 1 enable)
+  PA8  - Reserved
+  PA9  - USART1_TX - Debug UART transmit (optional)
+  PA10 - USART1_RX - Debug UART receive (optional)
+  PA11 - CAN1_RX   - CAN bus receive
+  PA12 - CAN1_TX   - CAN bus transmit
+  PA13 - SWDIO     - Serial Wire Debug I/O
+  PA14 - SWCLK     - Serial Wire Debug Clock
+  PA15 - Reserved
+
+PORT B (GPIOB):
+  PB0  - TIM3_CH3  - COIL_0_PWM (Magnetorquer 0 PWM, 20kHz)
+  PB1  - TIM3_CH4  - COIL_1_PWM (Magnetorquer 1 PWM, 20kHz)
+  PB2  - Reserved  - (BOOT1)
+  PB3  - Reserved  - (JTDO/TRACESWO)
+  PB4  - Reserved  - (NJTRST)
+  PB5  - Reserved
+  PB6  - I2C1_SCL  - I2C clock (sensors)
+  PB7  - I2C1_SDA  - I2C data (sensors)
+  PB8  - Reserved
+  PB9  - Reserved
+  PB10 - TIM2_CH3  - COIL_2_PWM (Magnetorquer 2 PWM, 20kHz)
+  PB11 - GPIO OUT  - STATUS_LED (optional status LED)
+  PB12 - GPIO OUT  - SPI1_CS_MAG (Magnetometer chip select)
+  PB13 - SPI1_SCK  - SPI clock
+  PB14 - SPI1_MISO - SPI MISO
+  PB15 - SPI1_MOSI - SPI MOSI
+
+PORT C (GPIOC):
+  PC0  - GPIO I/O  - GPIO_0 (General purpose)
+  PC1  - GPIO I/O  - GPIO_1 (General purpose)
+  PC2  - GPIO I/O  - GPIO_2 (General purpose)
+  PC3  - ADC       - SUN_SENS_0 (Sun sensor 0 analog input)
+  PC4  - GPIO OUT  - COIL_2_EN (Magnetorquer 2 enable)
+  PC5  - GPIO OUT  - WDI_EXT (External watchdog input)
+  PC6  - GPIO OUT  - SPI1_CS_GYRO (Gyroscope chip select)
+  PC7  - GPIO IN   - MAG_INT (Magnetometer interrupt, optional)
+  PC8  - GPIO IN   - GYRO_INT (Gyroscope interrupt, optional)
+  PC9  - Reserved
+  PC10 - Reserved
+  PC11 - Reserved
+  PC12 - Reserved
+  PC13 - OSC32_IN  - 32.768kHz crystal input (RTC, optional)
+  PC14 - OSC32_OUT - 32.768kHz crystal output (RTC, optional)
+  PC15 - Reserved
+
+PORT D (GPIOD):
+  PD2  - Reserved
+
+PORT H (GPIOH):
+  PH0  - OSC_IN    - 8MHz crystal input (optional, can use MSI)
+  PH1  - OSC_OUT   - 8MHz crystal output
+
+================================================================================
+FUNCTIONAL PIN GROUPS
+================================================================================
+
+COMMUNICATION INTERFACES:
+┌──────────────────────────────────────────────────────────────────────────┐
+│ CAN BUS (Primary Communication)                                         │
+│   PA11 - CAN1_RX  (Input)                                               │
+│   PA12 - CAN1_TX  (Output)                                              │
+│   External: TCAN330GD transceiver, 120Ω termination                     │
+├──────────────────────────────────────────────────────────────────────────┤
+│ I2C BUS (Sensor Interface)                                              │
+│   PB6 - I2C1_SCL  (Output, open-drain, 4.7kΩ pullup)                   │
+│   PB7 - I2C1_SDA  (I/O, open-drain, 4.7kΩ pullup)                      │
+│   Devices: INA226(×4), TMP100(×4), MMC5983MA, I3G4250D                 │
+├──────────────────────────────────────────────────────────────────────────┤
+│ SPI BUS (Alternative Sensor Interface)                                  │
+│   PB13 - SPI1_SCK   (Output, up to 10MHz)                              │
+│   PB14 - SPI1_MISO  (Input)                                             │
+│   PB15 - SPI1_MOSI  (Output)                                            │
+│   PB12 - CS_MAG     (Output, active-low)                                │
+│   PC6  - CS_GYRO    (Output, active-low)                                │
+├──────────────────────────────────────────────────────────────────────────┤
+│ DEBUG UART (Optional)                                                    │
+│   PA9  - USART1_TX  (Output, 115200 baud)                              │
+│   PA10 - USART1_RX  (Input, 115200 baud)                               │
+└──────────────────────────────────────────────────────────────────────────┘
+
+MAGNETORQUER CONTROL (H-Bridge):
+┌──────────────────────────────────────────────────────────────────────────┐
+│ COIL 0 (X-Axis)                                                         │
+│   PB0  - PWM (TIM3_CH3, 20kHz, 12-bit resolution)                       │
+│   PA6  - Enable (GPIO output, active-high)                              │
+│   PA3  - Direction (GPIO output: 0=forward, 1=reverse)                  │
+├──────────────────────────────────────────────────────────────────────────┤
+│ COIL 1 (Y-Axis)                                                         │
+│   PB1  - PWM (TIM3_CH4, 20kHz, 12-bit resolution)                       │
+│   PA7  - Enable (GPIO output, active-high)                              │
+│   PA4  - Direction (GPIO output: 0=forward, 1=reverse)                  │
+├──────────────────────────────────────────────────────────────────────────┤
+│ COIL 2 (Z-Axis)                                                         │
+│   PB10 - PWM (TIM2_CH3, 20kHz, 12-bit resolution)                       │
+│   PC4  - Enable (GPIO output, active-high)                              │
+│   PA5  - Direction (GPIO output: 0=forward, 1=reverse)                  │
+└──────────────────────────────────────────────────────────────────────────┘
+
+SENSORS:
+┌──────────────────────────────────────────────────────────────────────────┐
+│ SUN SENSORS (ADC Inputs, 12-bit, 0-3.3V)                               │
+│   PC3 - SUN_SENS_0 (ADC1_IN4)                                           │
+│   PA0 - SUN_SENS_1 (ADC1_IN5)                                           │
+│   PA1 - SUN_SENS_2 (ADC1_IN6)                                           │
+│   PA2 - SUN_SENS_3 (ADC1_IN7)                                           │
+├──────────────────────────────────────────────────────────────────────────┤
+│ SENSOR INTERRUPTS (Optional, for data-ready signaling)                  │
+│   PC7 - MAG_INT  (Magnetometer interrupt input)                         │
+│   PC8 - GYRO_INT (Gyroscope interrupt input)                            │
+└──────────────────────────────────────────────────────────────────────────┘
+
+SYSTEM PINS:
+┌──────────────────────────────────────────────────────────────────────────┐
+│ POWER & GROUND                                                           │
+│   VDD  - Digital power +3.3V (pins 18, 31, 47, 63) + 100nF each        │
+│   VSS  - Digital ground (pins 17, 30, 46, 62)                          │
+│   VDDA - Analog power +3.3V (pin 12) + 1µF + 10nF                      │
+│   VSSA - Analog ground (pin 11)                                         │
+├──────────────────────────────────────────────────────────────────────────┤
+│ RESET & BOOT                                                             │
+│   NRST  - System reset (pin 6, active-low, 100nF + 10kΩ pullup)        │
+│   BOOT0 - Boot mode select (pin 59, pulldown for normal boot)          │
+├──────────────────────────────────────────────────────────────────────────┤
+│ DEBUG INTERFACE (SWD)                                                    │
+│   PA13 - SWDIO (Serial Wire Debug Data I/O)                             │
+│   PA14 - SWCLK (Serial Wire Debug Clock)                                │
+│   PB3  - SWO (Serial Wire Output, optional for trace)                   │
+├──────────────────────────────────────────────────────────────────────────┤
+│ CLOCK SOURCES                                                            │
+│   PH0/PH1   - 8MHz main crystal (optional, can use internal MSI)       │
+│   PC13/PC14 - 32.768kHz RTC crystal (optional, for RTC functionality)  │
+├──────────────────────────────────────────────────────────────────────────┤
+│ MISCELLANEOUS                                                            │
+│   PC5  - WDI_EXT (External watchdog input, toggle at 1-10Hz)           │
+│   PB11 - STATUS_LED (Optional status/heartbeat LED)                     │
+│   PC0  - GPIO_0 (General purpose I/O, expansion)                        │
+│   PC1  - GPIO_1 (General purpose I/O, expansion)                        │
+│   PC2  - GPIO_2 (General purpose I/O, expansion)                        │
+└──────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+I2C DEVICE MAP (0x00 - 0x7F)
+================================================================================
+
+Address   Device      Function
+-------   --------    --------------------------------------------------
+0x30      MMC5983MA   3-axis magnetometer (if using I2C mode)
+0x40      INA226 #0   Current/voltage sensor for magnetorquer coil 0
+0x41      INA226 #1   Current/voltage sensor for magnetorquer coil 1
+0x42      INA226 #2   Current/voltage sensor for magnetorquer coil 2
+0x43      INA226 #3   Current/voltage sensor for magnetorquer coil 3
+0x48      TMP100 #0   Temperature sensor for magnetorquer coil 0
+0x49      TMP100 #1   Temperature sensor for magnetorquer coil 1
+0x4A      TMP100 #2   Temperature sensor for magnetorquer coil 2
+0x4B      TMP100 #3   Temperature sensor for magnetorquer coil 3
+0x68      I3G4250D    3-axis gyroscope (if using I2C mode)
+
+Note: All addresses are 7-bit I2C addresses (not shifted).
+      Verify actual addresses against sensor datasheets and hardware strapping.
+
+================================================================================
+PWM TIMER CONFIGURATION
+================================================================================
+
+Timer    Channel   Pin    Function      Frequency   Resolution
+-----    -------   ----   -----------   ---------   ----------
+TIM2     CH3       PB10   COIL_2_PWM    20 kHz      12-bit (4000 steps)
+TIM3     CH3       PB0    COIL_0_PWM    20 kHz      12-bit (4000 steps)
+TIM3     CH4       PB1    COIL_1_PWM    20 kHz      12-bit (4000 steps)
+
+Clock Configuration:
+  - APB1 Timer Clock: 80 MHz
+  - Prescaler: 0 (PSC = 0)
+  - Auto-Reload Register (ARR): 3999
+  - PWM Frequency: 80 MHz / 4000 = 20 kHz
+  - Duty Cycle Range: 0% (CCR=0) to 100% (CCR=3999)
+
+================================================================================
+NOTES
+================================================================================
+
+1. VERIFY ALL PINS: This pin mapping is based on STM32L476RG capabilities
+   and ADCS requirements. ALWAYS cross-reference with your actual PCB design
+   before use.
+
+2. ALTERNATE FUNCTIONS: Pins with peripheral functions (CAN, I2C, SPI, UART,
+   TIM) must be configured with the correct alternate function (AF) number.
+   See pin_config.h for AF definitions.
+
+3. EXTERNAL COMPONENTS:
+   - I2C requires 4.7kΩ pullup resistors on SCL and SDA
+   - CAN requires TCAN330GD transceiver and 120Ω termination
+   - All VDD pins need 100nF decoupling capacitors
+   - VDDA needs 1µF + 10nF decoupling
+   - NRST needs 100nF + 10kΩ pullup
+
+4. POWER CONSIDERATIONS:
+   - Total current for magnetorquers can be high (check INA226 readings)
+   - Use separate power domain for actuators if needed
+   - Monitor coil temperatures via TMP100 sensors
+
+5. DEBUG ACCESS: Always keep PA13/PA14 (SWDIO/SWCLK) accessible for debugging.
+   Do not reassign these pins unless absolutely necessary.
+
+6. BOOT MODE: BOOT0 should be pulled low for normal operation. Can be
+   connected to a jumper for firmware update mode if needed.
+
+================================================================================
+REFERENCES
+================================================================================
+
+- STM32L476RG Datasheet: Table 16 (Alternate Function Mapping)
+- firmware/doc/PIN_MAPPING.md (Detailed pin documentation)
+- firmware/Core/Inc/pin_config.h (Pin definitions for code)
+- hardware/sources/ (PCB schematics - verify actual connections)
+
+================================================================================
+Document Version: 1.0
+Last Updated: 2025-11-18
+Maintained by: ADCS Firmware Team
+================================================================================
